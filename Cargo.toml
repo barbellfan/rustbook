@@ -3,4 +3,7 @@ members = [
     "ch01/ch1_3_hello_cargo",
     "ch02/ch02_guessing_game"
 ]
+default-members = [
+    "ch02/ch02_guessing_game"
+]
 resolver = "2"
