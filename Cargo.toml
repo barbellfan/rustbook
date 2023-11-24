@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "ch01/ch1_3_hello_cargo",
+    "ch02/ch_2_guessing_game"
+]
+resolver = "2"
