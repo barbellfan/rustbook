@@ -2,9 +2,10 @@
 members = [
     "ch01/ch1_3_hello_cargo",
     "ch02/ch02_guessing_game",
-    "ch03/ch03_1_varsnmut"
+    "ch03/ch03_1_varsnmut",
+    "ch03/ch03_2_constants"
 ]
 default-members = [
-    "ch03/ch03_1_varsnmut"
+    "ch03/ch03_2_constants"
 ]
 resolver = "2"
