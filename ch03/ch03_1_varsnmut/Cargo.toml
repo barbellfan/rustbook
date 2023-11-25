@@ -1,5 +1,5 @@
 [package]
-name = "ch03_1_varsnmut"
+name = "varsnmut"
 version = "0.1.0"
 edition = "2021"
 
