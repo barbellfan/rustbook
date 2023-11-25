@@ -1,3 +1,5 @@
+#![allow(unused_mut)]
+
 fn main() {
     let x = 5;
 
@@ -10,7 +12,11 @@ fn main() {
 
     println!("The value of x is: {x}");
 
-    let mut spaces = "    "; // generates warning, not compiler error
+    // Generates warning, not compiler error like in previous
+    // version of Rust. Current Rust docs say this should fail
+    // compilation.
+    // I disabled the warning with the attribute.
+    let mut spaces = "    ";
     let spaces = spaces.len();
     println!("The value of spaces is: {spaces}");
 }
