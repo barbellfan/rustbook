@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     let x = 2.0; // default is f64.
     println!("x: {x}");
@@ -63,4 +65,18 @@ fn main() {
     let first = a1[0];
     let second = a1[1];
     println!("first element: {first}, second element: {second}");
+
+    let mut index = String::new();
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entere was not a number");
+
+    let element = a1[index];
+
+    println!("The value of the element at index {index} is: {element}");
 }
