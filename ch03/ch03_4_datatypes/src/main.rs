@@ -28,4 +28,8 @@ fn main() {
     let remainder = 43 % 5;
     println!("remainder: {remainder}");
 
+    // booleans!
+    let t = true;
+    let f: bool = false;
+    println!("t: {t}, f: {f}");
 }
