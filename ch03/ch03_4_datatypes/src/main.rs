@@ -48,4 +48,15 @@ fn main() {
     let six_point_four = tup.1;
     let one = tup.2;
     println!("dereferenced values: {five_hundred}, {six_point_four}, {one}");
+
+    // arrays
+    let a1 = [1, 2, 3, 4, 5]; // simple array initialization
+    let months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"]; // initializing with strings
+    let a2: [i32; 5] = [1, 2, 3, 4, 5]; // initialize with manual data type
+    let a3 = [3; 5]; // fill with three fives
+    println!("a1: {:?}", a1); // fancy way to print arrays
+    println!("months: {:?}", months);
+    println!("a2: {:?}", a2);
+    println!("a3: {:?}", a3);
 }
