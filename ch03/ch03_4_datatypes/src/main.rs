@@ -32,4 +32,10 @@ fn main() {
     let t = true;
     let f: bool = false;
     println!("t: {t}, f: {f}");
+
+    // chars
+    let c = 'z';
+    let z: char = 'ℤ'; // with explicit type annotation
+    let heart_eyed_cat = '😻';
+    println!("c: {c}. z: {z}, heart eyed cat: {heart_eyed_cat}");
 }
