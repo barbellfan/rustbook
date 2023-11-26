@@ -4,9 +4,10 @@ members = [
     "ch02/ch02_guessing_game",
     "ch03/ch03_1_varsnmut",
     "ch03/ch03_2_constants",
-    "ch03/ch03_3_shadowing"
+    "ch03/ch03_3_shadowing",
+    "ch03/ch03_4_datatypes"
 ]
 default-members = [
-    "ch03/ch03_3_shadowing"
+    "ch03/ch03_4_datatypes"
 ]
 resolver = "2"
