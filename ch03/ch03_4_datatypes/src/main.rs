@@ -59,4 +59,8 @@ fn main() {
     println!("months: {:?}", months);
     println!("a2: {:?}", a2);
     println!("a3: {:?}", a3);
+
+    let first = a1[0];
+    let second = a1[1];
+    println!("first element: {first}, second element: {second}");
 }
