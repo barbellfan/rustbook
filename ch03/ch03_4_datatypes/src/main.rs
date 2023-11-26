@@ -66,6 +66,8 @@ fn main() {
     let second = a1[1];
     println!("first element: {first}, second element: {second}");
 
+    println!("Please enter an array index:");
+
     let mut index = String::new();
     io::stdin()
         .read_line(&mut index)
