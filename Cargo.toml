@@ -5,9 +5,10 @@ members = [
     "ch03/ch03_1_varsnmut",
     "ch03/ch03_2_constants",
     "ch03/ch03_3_shadowing",
-    "ch03/ch03_4_datatypes"
+    "ch03/ch03_4_datatypes",
+    "ch03/ch03_5_functions"
 ]
 default-members = [
-    "ch03/ch03_4_datatypes"
+    "ch03/ch03_5_functions"
 ]
 resolver = "2"
