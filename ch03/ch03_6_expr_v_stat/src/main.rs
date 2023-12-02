@@ -1,3 +1,8 @@
 fn main() {
-    println!("Hello, world!");
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("Value of y: {y}");
 }
