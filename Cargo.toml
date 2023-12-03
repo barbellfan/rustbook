@@ -10,9 +10,10 @@ members = [
     "ch03/ch03_6_expr_v_stat",
     "ch03/ch03_7_return_val",
     "ch03/ch03_8_if_expr",
-    "ch03/ch03_9_loop_expr"
+    "ch03/ch03_9_loop_expr",
+    "ch03/ch03_10_while_expr"
 ]
 default-members = [
-    "ch03/ch03_9_loop_expr"
+    "ch03/ch03_10_while_expr"
 ]
 resolver = "2"
