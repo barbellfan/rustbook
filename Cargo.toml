@@ -8,9 +8,9 @@ members = [
     "ch03/ch03_4_datatypes",
     "ch03/ch03_5_functions",
     "ch03/ch03_6_expr_v_stat",
-    "ch03/ch03_07_return_val"
+    "ch03/ch03_7_return_val"
 ]
 default-members = [
-    "ch03/ch03_07_return_val"
+    "ch03/ch03_7_return_val"
 ]
 resolver = "2"
