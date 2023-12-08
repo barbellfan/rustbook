@@ -13,9 +13,10 @@ members = [
     "ch03/ch03_9_loop_expr",
     "ch03/ch03_10_while_expr",
     "ch03/ch03_11_for_expr",
-    "ch04/ch04_1_string_ex"
+    "ch04/ch04_1_string_ex",
+    "ch04/ch04_2_move_string"
 ]
 default-members = [
-    "ch04/ch04_1_string_ex"
+    "ch04/ch04_2_move_string"
 ]
 resolver = "2"
