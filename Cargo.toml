@@ -15,9 +15,10 @@ members = [
     "ch03/ch03_11_for_expr",
     "ch04/ch04_1_string_ex",
     "ch04/ch04_2_move_string",
-    "ch04/ch04_3_own_fn"
+    "ch04/ch04_3_own_fn",
+    "ch04/ch04_4_ret_val_scope"
 ]
 default-members = [
-    "ch04/ch04_3_own_fn"
+    "ch04/ch04_4_ret_val_scope"
 ]
 resolver = "2"
