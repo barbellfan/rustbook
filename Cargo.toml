@@ -12,9 +12,10 @@ members = [
     "ch03/ch03_8_if_expr",
     "ch03/ch03_9_loop_expr",
     "ch03/ch03_10_while_expr",
-    "ch03/ch03_11_for_expr"
+    "ch03/ch03_11_for_expr",
+    "ch04/ch04_1_string_ex"
 ]
 default-members = [
-    "ch03/ch03_11_for_expr"
+    "ch04/ch04_1_string_ex"
 ]
 resolver = "2"
