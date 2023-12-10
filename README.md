@@ -1,7 +1,7 @@
 # Rust Book Examples
 This is an attempt to run all the example code from the Rust Book.
 
-All of the code is in separate folders. The first level is the chapter number, with a leading zero, like `ch02` for examples in chapter 2. Inside, the sub-examples are named with the chapter, and the chapter section, and then the name of the example, like `ch1_3_hello_cargo`.
+All of the code is in separate folders. The first level is the chapter number, with a leading zero, like `ch02` for examples in chapter 2. Inside, the sub-examples are named with the chapter and an ordinal, and then the name of the example, like `ch1_3_hello_cargo`.
 
 I use underscores instead of periods in the folder names because Rust does not like periods in folder names.
 
