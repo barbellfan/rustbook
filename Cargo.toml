@@ -19,9 +19,10 @@ members = [
     "ch04/ch04_4_ret_val_scope",
     "ch04/ch04_5_ret_ref",
     "ch04/ch04_6_mut_ref",
-    "ch04/ch04_7_mut_refs"
+    "ch04/ch04_7_mut_refs",
+    "ch04/ch04_8_mut_n_non"
 ]
 default-members = [
-    "ch04/ch04_7_mut_refs"
+    "ch04/ch04_8_mut_n_non"
 ]
 resolver = "2"
