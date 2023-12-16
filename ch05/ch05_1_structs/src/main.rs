@@ -12,6 +12,9 @@ fn main() {
     println!("active: {}", user1.active);
     println!("email: {}", user1.email);
     println!("sign in count: {}", user1.sign_in_count);
+
+    let user2 = build_user(String::from("user2@example.com"), String::from("user2name"));
+    println!("user2: {}", user2.username);
 }
 
 struct User {
@@ -19,4 +22,13 @@ struct User {
     username: String,
     email: String,
     sign_in_count: u64,
+}
+
+fn build_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username: username,
+        email: email,
+        sign_in_count: 1,
+    }
 }
