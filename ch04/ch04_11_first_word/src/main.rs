@@ -1,6 +1,7 @@
 fn main() {
     let st = String::from("hello world");
     let fw = first_word(&st);
+    //st.clear(); // causes compiler error with borrowing
     println!("{}", fw);
 }
 
