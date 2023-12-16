@@ -16,5 +16,11 @@ fn main() {
     let slice3 = &s3[3..len];
     let slice4 = &s3[3..];
     println!("These are also equal: {} {}", slice3, slice4);
+
+    let s4 = String::from("hello");
+    let len2 = s4.len();
+    let slice5 = &s4[0..len2];
+    let slice6 = &s4[..];
+    println!("Again, equal: {} {}", slice5, slice6);
 }
 
