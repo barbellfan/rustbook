@@ -23,9 +23,10 @@ members = [
     "ch04/ch04_8_mut_n_non",
     "ch04/ch04_9_dang_ref",
     "ch04/ch04_10_slice",
-    "ch04/ch04_11_first_word"
+    "ch04/ch04_11_first_word",
+    "ch05/ch05_1_structs"
 ]
 default-members = [
-    "ch04/ch04_11_first_word"
+    "ch05/ch05_1_structs"
 ]
 resolver = "2"
