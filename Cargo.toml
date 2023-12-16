@@ -21,9 +21,10 @@ members = [
     "ch04/ch04_6_mut_ref",
     "ch04/ch04_7_mut_refs",
     "ch04/ch04_8_mut_n_non",
-    "ch04/ch04_9_dang_ref"
+    "ch04/ch04_9_dang_ref",
+    "ch04/ch04_10_slice"
 ]
 default-members = [
-    "ch04/ch04_9_dang_ref"
+    "ch04/ch04_10_slice"
 ]
 resolver = "2"
