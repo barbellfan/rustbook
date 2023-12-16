@@ -46,6 +46,10 @@ fn main() {
 
     println!("Color black: {} {} {}", black.0, black.1, black.2);
     println!("Point origin: {} {} {}", origin.0, origin.1, origin.2);
+
+    // unit-like structs with no fields
+    struct AlwaysEqual;
+    let _subject = AlwaysEqual; // don't know how to display or use this
 }
 
 struct User {
