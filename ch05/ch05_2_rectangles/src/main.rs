@@ -13,6 +13,8 @@ fn main() {
 
     let rect1 = (30, 50);
 
+    println!("rect1 is {}", rect1);
+
     println!("The area of the rectangle is {} square pixels. (using tuple)",
         area_tuple(rect1));
 
