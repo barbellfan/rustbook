@@ -22,7 +22,7 @@ fn main() {
         height: 50,
     };
 
-    println!("rect2 is {:?}", rect2);
+    println!("rect2 is {:#?}", rect2);
 
     println!("The area of the rectangle is {} square pixels. (using struct)",
         area_struct(&rect2));
