@@ -26,9 +26,9 @@ members = [
     "ch04/ch04_11_first_word",
     "ch05/ch05_1_structs",
     "ch05/ch05_2_rectangles",
-    "ch05/ch05_2_methods"
+    "ch05/ch05_3_methods"
 ]
 default-members = [
-    "ch05/ch05_2_methods"
+    "ch05/ch05_3_methods"
 ]
 resolver = "2"
