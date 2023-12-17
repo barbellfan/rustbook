@@ -26,6 +26,14 @@ fn main() {
 
     println!("The area of the rectangle is {} square pixels. (using struct)",
         area_struct(&rect2));
+
+    let scale = 2;
+    let rect3 = Rectangle {
+        width: dbg!(30 * scale),
+        height: 50,
+    };
+
+    dbg!(&rect3);
 }
 
 fn area(width: u32, height: u32) -> u32 {
