@@ -14,6 +14,15 @@ impl Rectangle {
     }
 }
 
+impl Rectangle {
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+}
+
 fn main() {
     let rect1 = Rectangle {
         width: 30,
@@ -34,4 +43,7 @@ fn main() {
 
     println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
+
+    let sq1 = Rectangle::square(20);
+    println!("A square: {:?}", sq1);
 }
