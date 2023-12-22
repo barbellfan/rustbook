@@ -29,9 +29,10 @@ members = [
     "ch05/ch05_3_methods",
     "ch05/ch05_4_more_params",
     "ch06/ch06_1_enums",
-    "ch06/ch06_2_msg_enum"
+    "ch06/ch06_2_msg_enum",
+    "ch06/ch06_3_option_enum"
 ]
 default-members = [
-    "ch06/ch06_2_msg_enum"
+    "ch06/ch06_3_option_enum"
 ]
 resolver = "2"
