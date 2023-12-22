@@ -1,18 +1,25 @@
 fn main() {
-    let _four = IpAddrKind::V4;
-    let _six = IpAddrKind::V6;
+    let home = IpAddr {
+        kind: IpAddrKind::V4,
+        address: String::from("127.0.0.1"),
+    };
 
-    route(IpAddrKind::V4);
-    route(IpAddrKind::V6);
+    let loopback = IpAddr {
+        kind: IpAddrKind::V6,
+        address: String::from("::1"),
+    };
 
-    println!("Hello, world!");
+    println!("home ip addr: {} {:?}", home.address, home.kind);
+    println!("loopback ip addr: {} {:?}", loopback.address, loopback.kind);
 }
 
+#[derive(Debug)]
 enum IpAddrKind {
     V4,
     V6,
 }
 
-fn route(_ip_kind: IpAddrKind) {
-
+struct IpAddr {
+    kind: IpAddrKind,
+    address: String,
 }
