@@ -27,9 +27,10 @@ members = [
     "ch05/ch05_1_structs",
     "ch05/ch05_2_rectangles",
     "ch05/ch05_3_methods",
-    "ch05/ch05_4_more_params"
+    "ch05/ch05_4_more_params",
+    "ch06/ch06_1_enums"
 ]
 default-members = [
-    "ch05/ch05_4_more_params"
+    "ch06/ch06_1_enums"
 ]
 resolver = "2"
