@@ -3,12 +3,12 @@ fn main() {
     match dice_roll {
         3 => add_fancy_hat(),
         7 => remove_fancy_hat(),
-        other => move_player(other),
+        _ => reroll(),
     }
 }
 
-fn move_player(num_spaces: i32) {
-    println!("move player {} spaces", num_spaces);
+fn reroll() {
+    println!("reroll");
 }
 
 fn remove_fancy_hat() {
