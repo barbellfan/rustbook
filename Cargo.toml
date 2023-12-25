@@ -34,9 +34,10 @@ members = [
     "ch06/ch06_4_match",
     "ch06/ch06_5_match_opt",
     "ch06/ch06_6_match_dice",
-    "ch06/ch06_7_iflet"
+    "ch06/ch06_7_iflet",
+    "ch07/ch07_1_restaurant"
 ]
 default-members = [
-    "ch06/ch06_4_match"
+    "ch07/ch07_1_restaurant"
 ]
 resolver = "2"
