@@ -10,6 +10,14 @@ fn main() {
 
     let q = Coin::Quarter;
     println!("q: {}", value_in_cents(q(UsState::Oregon)));
+
+    let mut count = 0;
+    let coin = Coin::Quarter(UsState::Washington);
+    match coin {
+        Coin::Quarter(state) => println!("State quarter from {:?}", state),
+        _ => count += 1,
+    }
+    println!("count: {}", count);
 }
 
 #[derive(Debug)]

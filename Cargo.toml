@@ -37,6 +37,6 @@ members = [
     "ch06/ch06_7_iflet"
 ]
 default-members = [
-    "ch06/ch06_7_iflet"
+    "ch06/ch06_4_match"
 ]
 resolver = "2"
