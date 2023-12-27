@@ -47,6 +47,13 @@ mod back_of_house {
 }
 
 #[allow(unused)]
+mod customer {
+    pub fn eat_at_restaurant() {
+        // can't use the shortcut here. out of scope.
+        //hosting::add_to_waitlist();
+    }
+}
+#[allow(unused)]
 pub fn eat_at_restaurant() {
     // absolute path
     crate::front_of_house::hosting::add_to_waitlist();
