@@ -6,8 +6,8 @@
 // with std:fmt and std::io.
 use std::collections::HashMap;
 
-use std::fmt;
-use std::io;
+use std::fmt::Result;
+use std::io::Result as IoResult;
 
 fn main() {
     let mut map = HashMap::new();
@@ -16,11 +16,11 @@ fn main() {
 }
 
 #[allow(unused)]
-fn function1() -> fmt::Result {
+fn function1() -> Result {
     Ok(())
 }
 
 #[allow(unused)]
-fn function2() -> io::Result<()> {
+fn function2() -> IoResult<()> {
     Ok(())
 }
