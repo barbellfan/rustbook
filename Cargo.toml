@@ -37,7 +37,8 @@ members = [
     "ch06/ch06_7_iflet",
     "ch07/ch07_1_restaurant",
     "ch07/ch07_2_backyard",
-    "ch07/ch07_3_use"
+    "ch07/ch07_3_use",
+    "ch07/ch07_4_pub_use"
 ]
 default-members = [
     "ch07/ch07_3_use"
