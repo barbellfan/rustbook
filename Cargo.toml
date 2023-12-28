@@ -40,9 +40,10 @@ members = [
     "ch07/ch07_3_use",
     "ch07/ch07_4_pub_use",
     "ch07/ch07_5_use_rand",
-    "ch07/ch07_6_mod_files"
+    "ch07/ch07_6_mod_files",
+    "ch08/ch08_1_vectors"
 ]
 default-members = [
-    "ch07/ch07_5_use_rand"
+    "ch08/ch08_1_vectors"
 ]
 resolver = "2"
