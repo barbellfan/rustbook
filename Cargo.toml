@@ -39,7 +39,8 @@ members = [
     "ch07/ch07_2_backyard",
     "ch07/ch07_3_use",
     "ch07/ch07_4_pub_use",
-    "ch07/ch07_5_use_rand"
+    "ch07/ch07_5_use_rand",
+    "ch07/ch07_6_mod_files"
 ]
 default-members = [
     "ch07/ch07_5_use_rand"
