@@ -2,6 +2,7 @@ fn main() {
     creating_a_new_vector();
     initializing_a_new_vector();
     updating_a_vector();
+    reading_elements_of_vectors();
 }
 
 fn creating_a_new_vector() {
@@ -23,4 +24,18 @@ fn updating_a_vector() {
     v.push(8);
 
     println!("updated vector: {:?}", v);
+}
+
+fn reading_elements_of_vectors() {
+    let v = vec![1, 2, 3, 4, 5];
+
+    let third: &i32 = &v[2];
+    println!("The third element is {third}");
+
+    let third: Option<&i32> = v.get(2);
+    match third {
+        Some(third) => println!("The third element is {third}"),
+        None => println!("There is no third element"),
+    }
+
 }
