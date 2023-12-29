@@ -3,6 +3,7 @@ fn main() {
     initializing_a_new_vector();
     updating_a_vector();
     reading_elements_of_vectors();
+    valid_reference();
 }
 
 fn creating_a_new_vector() {
@@ -44,4 +45,18 @@ fn reading_elements_of_vectors() {
 
     let does_not_exist = v.get(100);
     println!("Does not exist: {:?}", does_not_exist);
+}
+
+fn valid_reference() {
+    let mut v = vec![1, 2, 3, 4, 5];
+
+    let first = &v[0];
+
+    // doesn't work here
+    //v.push(6);
+
+    println!("The first element is: {first}");
+
+    // works here, though. borrow checker magic.
+    v.push(6);
 }
