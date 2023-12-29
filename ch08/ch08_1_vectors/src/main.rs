@@ -4,6 +4,7 @@ fn main() {
     updating_a_vector();
     reading_elements_of_vectors();
     valid_reference();
+    iterating();
 }
 
 fn creating_a_new_vector() {
@@ -59,4 +60,11 @@ fn valid_reference() {
 
     // works here, though. borrow checker magic.
     v.push(6);
+}
+
+fn iterating() {
+    let v = vec![100, 32, 57];
+    for i in &v {
+        println!("{i}");
+    }
 }
