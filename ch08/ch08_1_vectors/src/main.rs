@@ -6,6 +6,7 @@ fn main() {
     valid_reference();
     iterating();
     iterating_mutable();
+    enum_mult_types();
 }
 
 fn creating_a_new_vector() {
@@ -76,4 +77,21 @@ fn iterating_mutable() {
         *i += 50;
     }
     println!("{:?}", v);
+}
+
+fn enum_mult_types() {
+    #[derive(Debug)]
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    println!("{:?}", row);
 }
