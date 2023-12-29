@@ -38,4 +38,10 @@ fn reading_elements_of_vectors() {
         None => println!("There is no third element"),
     }
 
+    // crashes when run
+    //let does_not_exist = &v[100];
+    //println!("Does not exist: {does_not_exist}");
+
+    let does_not_exist = v.get(100);
+    println!("Does not exist: {:?}", does_not_exist);
 }
