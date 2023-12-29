@@ -5,6 +5,7 @@ fn main() {
     reading_elements_of_vectors();
     valid_reference();
     iterating();
+    iterating_mutable();
 }
 
 fn creating_a_new_vector() {
@@ -67,4 +68,12 @@ fn iterating() {
     for i in &v {
         println!("{i}");
     }
+}
+
+fn iterating_mutable() {
+    let mut v = vec![100, 32, 57];
+    for i in &mut v {
+        *i += 50;
+    }
+    println!("{:?}", v);
 }
