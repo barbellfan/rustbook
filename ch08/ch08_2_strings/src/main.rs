@@ -1,7 +1,10 @@
+use std::fmt::format;
+
 fn main() {
     creating_a_new_string();
     valid_utf8_strings();
     updating_strings();
+    concatenation();
 }
 
 fn creating_a_new_string() {
@@ -64,4 +67,26 @@ fn updating_strings() {
     let mut s = String::from("lo");
     s.push('l');
     println!("updated with push(): {s}");
+}
+
+fn concatenation() {
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    let s3 = s1 + &s2; // s1 has been moved here and can no longer be used
+    println!("concatenated string: {s3}");
+
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    // s1 gets owned. s2 and s3 are sent as references.
+    let s = s1 + "-" + &s2 + "-" + &s3;
+    println!("concatenating multiple strings: {s}");
+
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+
+    // format! takes references, so it does not take ownership of anything
+    let s = format!("{s1}-{s2}-{s3}");
+    println!("using format!: {s}");
 }
