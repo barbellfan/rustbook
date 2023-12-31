@@ -1,6 +1,7 @@
 fn main() {
     creating_a_new_string();
     valid_utf8_strings();
+    updating_strings();
 }
 
 fn creating_a_new_string() {
@@ -45,4 +46,22 @@ fn valid_utf8_strings() {
     println!("{hello}");
     let hello = String::from("Hola");
     println!("{hello}");
+}
+
+fn updating_strings() {
+    // append a str using push_str(). does not take ownership.
+    let mut s = String::from("foo");
+    s.push_str("bar");
+    println!("updated string: {s}");
+
+    // push_str() takes a string slice so it does not take ownership
+    let mut s1 = String::from("foo");
+    let s2 = "bar";
+    s1.push_str(s2);
+    println!("s2 is {s2}");
+
+    // push() takes a char
+    let mut s = String::from("lo");
+    s.push('l');
+    println!("updated with push(): {s}");
 }
