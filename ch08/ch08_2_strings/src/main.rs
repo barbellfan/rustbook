@@ -5,6 +5,7 @@ fn main() {
     valid_utf8_strings();
     updating_strings();
     concatenation();
+    internal_representation();
 }
 
 fn creating_a_new_string() {
@@ -89,4 +90,20 @@ fn concatenation() {
     // format! takes references, so it does not take ownership of anything
     let s = format!("{s1}-{s2}-{s3}");
     println!("using format!: {s}");
+}
+
+fn internal_representation() {
+    // you can't just index into a String
+    //let s1 = String::from("hello");
+    //let h = s1[0];
+
+    // this word has 4 unicode bytes
+    let hello = String::from("Hola");
+    println!("String is: {hello}. Length is {0}", hello.len());
+
+    // this word has 24
+    let hello = String::from("Здравствуйте");
+    println!("String is: {hello}. Length is {0}", hello.len());
+    // this doesn't work
+    //let answer = &hello[0];
 }
