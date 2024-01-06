@@ -1,5 +1,3 @@
-use std::fmt::format;
-
 fn main() {
     creating_a_new_string();
     valid_utf8_strings();
