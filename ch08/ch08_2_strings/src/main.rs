@@ -4,6 +4,7 @@ fn main() {
     updating_strings();
     concatenation();
     internal_representation();
+    slicing_strings();
 }
 
 fn creating_a_new_string() {
@@ -104,4 +105,15 @@ fn internal_representation() {
     println!("String is: {hello}. Length is {0}", hello.len());
     // this doesn't work
     //let answer = &hello[0];
+}
+
+fn slicing_strings() {
+    let hello = "Здравствуйте";
+    // this works because the slice happens to match full chars.
+    let s = &hello[0..4];
+    println!("string slice: {s}");
+    // This fails at runtime because the slice does not match a char boundary.
+    // let s = &hello[0..1];
+    // println!("different string slice: {s}");
+    // use ranges on string slices with caution
 }
