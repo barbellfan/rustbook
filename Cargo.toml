@@ -42,9 +42,10 @@ members = [
     "ch07/ch07_5_use_rand",
     "ch07/ch07_6_mod_files",
     "ch08/ch08_1_vectors",
-    "ch08/ch08_2_strings"
+    "ch08/ch08_2_strings",
+    "ch08/ch08_3_hashmaps"
 ]
 default-members = [
-    "ch08/ch08_2_strings"
+    "ch08/ch08_3_hashmaps"
 ]
 resolver = "2"
