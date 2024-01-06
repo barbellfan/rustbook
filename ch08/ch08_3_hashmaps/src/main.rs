@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, btree_map::{Entry, OccupiedEntry, VacantEntry}};
 
 fn main() {
     creating_new_hashmap();
@@ -63,6 +63,8 @@ fn overwriting_a_value() {
 }
 
 fn add_key_if_not_present() {
+    use std::collections::hash_map::Entry::*;
+
     let mut scores = HashMap::new();
 
     scores.insert(String::from("Blue"), 10);
@@ -71,4 +73,17 @@ fn add_key_if_not_present() {
     scores.entry(String::from("Blue")).or_insert(50);
 
     println!("key added if not present: {scores:?}");
+
+    // not in the docs, just wanted to try it
+    // try replacing or_insert() with explicit match statements.
+    match scores.entry(String::from("Yellow")) {
+        Occupied(entry) => println!("occupied: {entry:?}"),
+        Vacant(entry) => println!("vacant: {entry:?}"),
+    }
+
+    match scores.entry(String::from("Green")) {
+        Occupied(entry) => println!("occupied: {entry:?}"),
+        Vacant(entry) => println!("vacant: {entry:?}"),
+    }
+    // Shows that you can take any arbitrary action depending whether the key exists.
 }
