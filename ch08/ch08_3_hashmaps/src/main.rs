@@ -5,6 +5,7 @@ fn main() {
     getting_values_from_hashmaps();
     hashmaps_and_ownership();
     overwriting_a_value();
+    add_key_if_not_present();
 }
 
 fn creating_new_hashmap() {
@@ -59,4 +60,15 @@ fn overwriting_a_value() {
     scores.insert(String::from("Blue"),25);
 
     println!("scores after overwrite: {scores:?}");
+}
+
+fn add_key_if_not_present() {
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+
+    scores.entry(String::from("Yellow")).or_insert(50);
+    scores.entry(String::from("Blue")).or_insert(50);
+
+    println!("key added if not present: {scores:?}");
 }
