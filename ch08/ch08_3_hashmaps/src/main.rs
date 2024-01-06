@@ -4,6 +4,7 @@ fn main() {
     creating_new_hashmap();
     getting_values_from_hashmaps();
     hashmaps_and_ownership();
+    overwriting_a_value();
 }
 
 fn creating_new_hashmap() {
@@ -48,4 +49,14 @@ fn hashmaps_and_ownership() {
 
     // Hashmaps own their variables. Unless you insert a reference.
     // Then the reference must be valid as long as the Hashmap is valid.
+}
+
+fn overwriting_a_value() {
+    // overwriting a value
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"),10);
+    scores.insert(String::from("Blue"),25);
+
+    println!("scores after overwrite: {scores:?}");
 }
