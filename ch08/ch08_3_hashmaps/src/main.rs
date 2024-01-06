@@ -6,6 +6,7 @@ fn main() {
     hashmaps_and_ownership();
     overwriting_a_value();
     add_key_if_not_present();
+    update_val_based_on_old_val();
 }
 
 fn creating_new_hashmap() {
@@ -86,4 +87,17 @@ fn add_key_if_not_present() {
         Vacant(entry) => println!("vacant: {entry:?}"),
     }
     // Shows that you can take any arbitrary action depending whether the key exists.
+}
+
+fn update_val_based_on_old_val() {
+    let text = "hello world wonderful world";
+
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!("updated values in hashmap based on previous one: {:?}", map);
 }
