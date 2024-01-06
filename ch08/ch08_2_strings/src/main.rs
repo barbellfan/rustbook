@@ -5,6 +5,7 @@ fn main() {
     concatenation();
     internal_representation();
     slicing_strings();
+    iterating_over_strings();
 }
 
 fn creating_a_new_string() {
@@ -116,4 +117,16 @@ fn slicing_strings() {
     // let s = &hello[0..1];
     // println!("different string slice: {s}");
     // use ranges on string slices with caution
+}
+
+fn iterating_over_strings() {
+    println!("iterating using chars");
+    for c in "Зд".chars() {
+        println!("{c}");
+    }
+
+    println!("vs iterating using bytes");
+    for b in "Зд".bytes() {
+        println!("{b}");
+    }
 }
