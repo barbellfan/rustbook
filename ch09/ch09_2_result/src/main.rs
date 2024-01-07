@@ -3,7 +3,8 @@ use std::io::ErrorKind;
 
 fn main() {
     //_recoverable_errors_with_result();
-    matching_on_different_errors();
+    //_matching_on_different_errors();
+    unwrap();
 }
 
 fn _recoverable_errors_with_result() {
@@ -17,7 +18,7 @@ fn _recoverable_errors_with_result() {
     println!("greeting file: {:?}", greeting_file);
 }
 
-fn matching_on_different_errors() {
+fn _matching_on_different_errors() {
     let greeting_file_result = File::open("hello.txt");
 
     let greeting_file = match greeting_file_result {
@@ -32,6 +33,12 @@ fn matching_on_different_errors() {
             }
         }
     };
+
+    println!("greeting file: {:?}", greeting_file);
+}
+
+fn unwrap() {
+    let greeting_file = File::open("hello.txt").unwrap();
 
     println!("greeting file: {:?}", greeting_file);
 }
