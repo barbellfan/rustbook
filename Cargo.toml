@@ -43,9 +43,10 @@ members = [
     "ch07/ch07_6_mod_files",
     "ch08/ch08_1_vectors",
     "ch08/ch08_2_strings",
-    "ch08/ch08_3_hashmaps"
+    "ch08/ch08_3_hashmaps",
+    "ch09/ch09_1_panic"
 ]
 default-members = [
-    "ch08/ch08_3_hashmaps"
+    "ch09/ch09_1_panic"
 ]
 resolver = "2"
