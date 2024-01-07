@@ -1,13 +1,13 @@
 fn main() {
     //_call_panic();
-    panic_in_lib();
+    //_panic_in_lib();
 }
 
 fn _call_panic() {
     panic!("crash and burn");
 }
 
-fn panic_in_lib() {
+fn _panic_in_lib() {
     let v = vec![1, 2, 3];
 
     v[99]; // this line will panic
