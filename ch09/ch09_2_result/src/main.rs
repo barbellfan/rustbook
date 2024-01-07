@@ -4,7 +4,8 @@ use std::io::ErrorKind;
 fn main() {
     //_recoverable_errors_with_result();
     //_matching_on_different_errors();
-    unwrap();
+    //_unwrap();
+    expect();
 }
 
 fn _recoverable_errors_with_result() {
@@ -37,8 +38,16 @@ fn _matching_on_different_errors() {
     println!("greeting file: {:?}", greeting_file);
 }
 
-fn unwrap() {
+fn _unwrap() {
     let greeting_file = File::open("hello.txt").unwrap();
+
+    println!("greeting file: {:?}", greeting_file);
+}
+
+fn expect() {
+
+    let greeting_file = File::open("hello.txt")
+        .expect("hello.txt should be included in this project");
 
     println!("greeting file: {:?}", greeting_file);
 }
