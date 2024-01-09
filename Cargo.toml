@@ -45,9 +45,10 @@ members = [
     "ch08/ch08_2_strings",
     "ch08/ch08_3_hashmaps",
     "ch09/ch09_1_panic",
-    "ch09/ch09_2_result"
+    "ch09/ch09_2_result",
+    "ch10/ch10_1_extract_fn"
 ]
 default-members = [
-    "ch09/ch09_2_result"
+    "ch10/ch10_1_extract_fn"
 ]
 resolver = "2"
