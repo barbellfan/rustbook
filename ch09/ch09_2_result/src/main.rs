@@ -7,6 +7,8 @@ fn main() {
     //_unwrap();
     //_expect();
     propagating_errors();
+    propagating_errors_shortcut();
+    propagating_errors_chain();
 }
 
 fn _recoverable_errors_with_result() {
@@ -72,4 +74,31 @@ fn read_username_from_file() -> Result<String, io::Error> {
         Ok(_) => Ok(username),
         Err(e) => Err(e),
     }
+}
+
+fn propagating_errors_shortcut() {
+    let r = read_username_from_file_shortcut();
+
+    println!("Result from shortcut: {:?}", r);
+}
+
+fn read_username_from_file_shortcut() -> Result<String, io::Error> {
+    let mut username_file = File::open("hello.txt")?;
+    let mut username = String::new();
+    username_file.read_to_string(&mut username)?;
+    Ok(username)
+}
+
+fn propagating_errors_chain() {
+    let r = read_username_from_file_chain();
+
+    println!("Result from chain: {:?}", r);
+}
+
+fn read_username_from_file_chain() -> Result<String, io::Error> {
+    let mut username = String::new();
+
+    File::open("hello.txt")?.read_to_string(&mut username)?;
+
+    Ok(username)
 }
