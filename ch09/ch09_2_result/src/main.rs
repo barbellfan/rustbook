@@ -1,11 +1,12 @@
 use std::fs::File;
-use std::io::ErrorKind;
+use std::io::{ErrorKind, self, Read};
 
 fn main() {
     //_recoverable_errors_with_result();
     //_matching_on_different_errors();
     //_unwrap();
-    expect();
+    //_expect();
+    propagating_errors();
 }
 
 fn _recoverable_errors_with_result() {
@@ -44,10 +45,31 @@ fn _unwrap() {
     println!("greeting file: {:?}", greeting_file);
 }
 
-fn expect() {
+fn _expect() {
 
     let greeting_file = File::open("hello.txt")
         .expect("hello.txt should be included in this project");
 
     println!("greeting file: {:?}", greeting_file);
+}
+
+fn propagating_errors() {
+    let r = read_username_from_file();
+
+    println!("Result: {:?}", r);
+}
+
+fn read_username_from_file() -> Result<String, io::Error> {
+    let username_file_result = File::open("hello.txt");
+
+    let mut username_file = match username_file_result {
+        Ok(file) => file,
+        Err(e) => return Err(e),
+    };
+
+    let mut username = String::new();
+    match username_file.read_to_string(&mut username) {
+        Ok(_) => Ok(username),
+        Err(e) => Err(e),
+    }
 }
