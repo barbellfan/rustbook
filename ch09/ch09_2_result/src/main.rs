@@ -1,4 +1,4 @@
-use std::fs::File;
+use std::fs::{File, self};
 use std::io::{ErrorKind, self, Read};
 
 fn main() {
@@ -9,6 +9,7 @@ fn main() {
     propagating_errors();
     propagating_errors_shortcut();
     propagating_errors_chain();
+    using_read_to_string();
 }
 
 fn _recoverable_errors_with_result() {
@@ -101,4 +102,14 @@ fn read_username_from_file_chain() -> Result<String, io::Error> {
     File::open("hello.txt")?.read_to_string(&mut username)?;
 
     Ok(username)
+}
+
+fn using_read_to_string() {
+    let r = read_username_from_file_read_to_string();
+
+    println!("Result from calling read_to_string(): {:?}", r);
+}
+
+fn read_username_from_file_read_to_string() -> Result<String, io::Error> {
+    fs::read_to_string("hello.txt")
 }
