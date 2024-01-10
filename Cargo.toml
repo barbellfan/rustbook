@@ -47,9 +47,10 @@ members = [
     "ch09/ch09_1_panic",
     "ch09/ch09_2_result",
     "ch10/ch10_1_extract_fn",
-    "ch10/ch10_2_generics"
+    "ch10/ch10_2_generics",
+    "ch10/ch10_3_traits"
 ]
 default-members = [
-    "ch10/ch10_2_generics"
+    "ch10/ch10_3_traits"
 ]
 resolver = "2"
