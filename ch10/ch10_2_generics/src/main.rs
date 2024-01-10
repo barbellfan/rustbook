@@ -1,3 +1,7 @@
+fn main() {
+    generic_in_fn_def();
+}
+
 fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     let mut largest = &list[0];
 
@@ -10,7 +14,7 @@ fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     largest
 }
 
-fn main() {
+fn generic_in_fn_def() {
     let number_list = vec![34, 50, 25, 100, 65];
 
     let result = largest(&number_list);
