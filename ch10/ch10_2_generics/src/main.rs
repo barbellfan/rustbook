@@ -2,6 +2,7 @@ fn main() {
     generic_in_fn_def();
     generic_in_struct_def();
     generic_in_struct_def_2();
+    generic_in_method_def();
 }
 
 fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
@@ -60,4 +61,24 @@ fn generic_in_struct_def_2() {
     println!("both_float.y: {}", both_float.y);
     println!("integer_and_float.x: {}", integer_and_float.x);
     println!("integer_and_float.y: {}", integer_and_float.y);
+}
+
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
+impl Point<f32> {
+    fn distance_from_origin(&self) -> f32 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
+fn generic_in_method_def() {
+    let p = Point { x: 5, y: 10 };
+    println!("p.x = {}", p.x());
+
+    let p2 = Point { x: 10.0, y: 20.0 };
+    println!("distance: {}", p2.distance_from_origin());
 }
