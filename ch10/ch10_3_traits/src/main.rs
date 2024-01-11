@@ -1,6 +1,8 @@
 mod aggregator;
 use aggregator::{Summary, NewsArticle, Tweet};
 
+use crate::aggregator::notify;
+
 fn main() {
     let na = NewsArticle {
         headline: String::from("headline"),
@@ -11,6 +13,7 @@ fn main() {
 
     println!("summary of news article: {}", na.summarize());
     println!("summary of author: {}", na.summarize_author());
+    notify(&na);
 
     let tw = Tweet {
         username: String::from("@tweeter"),
@@ -21,4 +24,5 @@ fn main() {
 
     println!("summary of tweet: {}", tw.summarize());
     println!("summary of author: {}", tw.summarize_author());
+    notify(&tw);
 }
