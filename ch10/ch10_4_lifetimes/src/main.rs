@@ -4,6 +4,8 @@ fn main() {
     different_lifetimes();
     different_lifetimes_2();
     lifetimes_in_structs();
+
+    let _s: &'static str = "I have a static lifetime";
 }
 
 fn prevent_dangling_references() {
