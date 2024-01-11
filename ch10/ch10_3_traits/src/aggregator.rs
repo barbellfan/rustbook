@@ -107,3 +107,33 @@ fn returns_summarizable_bad(switch: bool) -> impl Summary {
     }
 }
 */
+
+// using trait bounds to conditionally implement methods
+// _cmp_display can only be called if T has both traits.
+struct _Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> _Pair<T> {
+    fn _new(x: T, y: T) -> Self {
+        Self { x, y }
+    }
+}
+
+impl<T: Display + PartialOrd> _Pair<T> {
+    fn _cmp_display(&self) {
+        if self.x >= self.y {
+            println!("The largest member is x = {}", self.x);
+        } else {
+            println!("The largest member is y = {}", self.y);
+        }
+    }
+}
+
+// blanket implementations
+/*
+impl<T: Display> ToString for T {
+    // snip
+}
+*/
