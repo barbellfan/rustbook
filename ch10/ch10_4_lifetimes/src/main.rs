@@ -64,3 +64,14 @@ fn lifetimes_in_structs() {
 struct ImportantExcerpt<'a> {
     part: &'a str,
 }
+
+impl<'a> ImportantExcerpt<'a> {
+    fn _level(&self) -> i32 {
+        3
+    }
+
+    fn _announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("Attention please: {}", announcement);
+        self.part
+    }
+}
