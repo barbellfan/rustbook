@@ -14,19 +14,32 @@
       }
     },
     {
-      "label": "cargo build all",
-      "type": "shell",
-      "command": "cargo",
-      "args": [
-        "build",
-        "--all-targets"
-      ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
+        "label": "cargo build all",
+        "type": "shell",
+        "command": "cargo",
+        "args": [
+          "build",
+          "--all-targets"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "cargo build workspace",
+        "type": "shell",
+        "command": "cargo",
+        "args": [
+          "build",
+          "--workspace"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+        {
       "label": "cargo run",
       "type": "shell",
       "command": "cargo",
