@@ -10,6 +10,7 @@ fn main() {
     };
 
     println!("summary of news article: {}", na.summarize());
+    println!("summary of author: {}", na.summarize_author());
 
     let tw = Tweet {
         username: String::from("@tweeter"),
@@ -19,4 +20,5 @@ fn main() {
     };
 
     println!("summary of tweet: {}", tw.summarize());
+    println!("summary of author: {}", tw.summarize_author());
 }
