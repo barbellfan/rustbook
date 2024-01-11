@@ -3,12 +3,9 @@ fn main() {
 }
 
 fn prevent_dangling_references() {
-    let r;
+    let x = 5;
 
-    {
-        let x = 5;
-        r = &x;
-    }
+    let r = &x;
 
     println!("r: {}", r);
 }
