@@ -1,9 +1,12 @@
+use std::fmt::Display;
+
 fn main() {
     prevent_dangling_references();
     generic_lifetimes_in_functions();
     different_lifetimes();
     different_lifetimes_2();
     lifetimes_in_structs();
+    all_together();
 
     let _s: &'static str = "I have a static lifetime";
 }
@@ -75,5 +78,30 @@ impl<'a> ImportantExcerpt<'a> {
     fn _announce_and_return_part(&self, announcement: &str) -> &str {
         println!("Attention please: {}", announcement);
         self.part
+    }
+}
+
+fn all_together() {
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
+    let announcement = String::from("Hey!");
+
+    let result = longest_with_an_announcement(&string1, string2, announcement);
+    println!("longest: {}", result);
+}
+
+fn longest_with_an_announcement<'a, T>(
+    x: &'a str,
+    y: &'a str,
+    ann: T,
+) -> &'a str
+where
+    T: Display,
+{
+    println!("Announcement! {}", ann);
+    if x.len() > y.len() {
+        x
+    } else {
+        y
     }
 }
