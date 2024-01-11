@@ -3,6 +3,7 @@ fn main() {
     generic_lifetimes_in_functions();
     different_lifetimes();
     different_lifetimes_2();
+    lifetimes_in_structs();
 }
 
 fn prevent_dangling_references() {
@@ -48,4 +49,18 @@ fn different_lifetimes_2() {
         println!("The longest string is {}", result); // works here
     }
     //println!("The longest string is {}", result); // but not here, since string2 is out of scope
+}
+
+fn lifetimes_in_structs() {
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
+
+    println!("important excerpt: {}", i.part);
+}
+
+struct ImportantExcerpt<'a> {
+    part: &'a str,
 }
