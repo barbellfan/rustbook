@@ -53,9 +53,10 @@ members = [
     "ch11/ch11_1_adder",
     "ch11/ch11_2_assert",
     "ch11/ch11_3_controlling_tests",
-    "ch11/ch11_4_test_org"
+    "ch11/ch11_4_test_org",
+    "ch12/ch12_minigrep"
 ]
 default-members = [
-    "ch11/ch11_4_test_org"
+    "ch12/ch12_minigrep"
 ]
 resolver = "2"
