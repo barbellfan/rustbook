@@ -51,9 +51,10 @@ members = [
     "ch10/ch10_3_traits",
     "ch10/ch10_4_lifetimes",
     "ch11/ch11_1_adder",
-    "ch11/ch11_2_assert"
+    "ch11/ch11_2_assert",
+    "ch11/ch11_3_controlling_tests"
 ]
 default-members = [
-    "ch11/ch11_2_assert"
+    "ch11/ch11_3_controlling_tests"
 ]
 resolver = "2"
