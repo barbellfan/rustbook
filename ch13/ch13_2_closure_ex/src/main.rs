@@ -40,4 +40,10 @@ fn various_closures() {
 
     let add_v4 = add_one_v4(4); // just using default data type, i32.
     println!("add_one_v4: {}", add_v4);
+
+    let example_closure = |x| x;
+
+    let s = example_closure(String::from("hello"));
+    //let n = example_closure(5); // this won't compile because the previous line set the data type of the closure.
+    println!("example closure result: {s}");
 }
