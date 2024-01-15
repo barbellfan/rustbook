@@ -6,6 +6,7 @@ fn main() {
     sharing_immutable_refs();
     sharing_mutable_refs();
     force_closure_ownership();
+    fn_traits();
 }
 
 fn exp_closure() {
@@ -92,4 +93,36 @@ fn force_closure_ownership() {
     // cannot use list here:
     // borrow of moved value
     //println!("Can I use list here?: {:?}", list);
+}
+
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    _height: u32,
+}
+
+fn fn_traits() {
+    println!("sort_by_key uses FnMut instead of FnOnce:");
+    let mut list = [
+        Rectangle { width: 10, _height: 1},
+        Rectangle { width: 3, _height: 5},
+        Rectangle { width: 7, _height: 12},
+    ];
+
+    list.sort_by_key(|r| r.width);
+    println!("{:#?}", list);
+
+    println!("Count the number of sort operations when sorting:");
+    // this won't work because the first time you push `value` into
+    // the vec, it is no longer owned.
+    // let mut sort_operations = vec![];
+    // let value = String::from("by key called");
+    let mut num_sort_operations = 0;
+
+    list.sort_by_key(|r| {
+        //sort_operations.push(value);
+        num_sort_operations += 1;
+        r.width
+    });
+    println!("{:#?}, sorted in {num_sort_operations} operations", list);
 }
