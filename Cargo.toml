@@ -59,9 +59,10 @@ members = [
     "ch13/ch13_2_closure_ex",
     "ch13/ch13_3_iterators",
     "ch13/ch13_4_closure_env",
-    "ch13/ch13_5_minigrep"
+    "ch13/ch13_5_minigrep",
+    "ch15/ch15_1_boxt"
 ]
 default-members = [
-    "ch13/ch13_5_minigrep"
+    "ch15/ch15_1_boxt"
 ]
 resolver = "2"
