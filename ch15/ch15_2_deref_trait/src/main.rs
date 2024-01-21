@@ -1,3 +1,5 @@
+use std::ops::Deref;
+
 fn main() {
     follow_pointer_to_value();
     use_boxt_like_a_reference();
@@ -19,12 +21,19 @@ fn use_boxt_like_a_reference() {
     assert_eq!(5, x);
     assert_eq!(5, *y);
 }
-
 struct MyBox<T>(T);
 
 impl<T> MyBox<T> {
     fn new(x: T) -> MyBox<T> {
         MyBox(x)
+    }
+}
+
+impl<T> Deref for MyBox<T> {
+    type Target = T;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 
@@ -34,4 +43,5 @@ fn define_our_own_smart_pointer() {
 
     assert_eq!(5, x);
     assert_eq!(5, *y);
+    // last line does this for *y: *(y.deref())
 }
