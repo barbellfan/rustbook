@@ -9,6 +9,10 @@ impl Drop for CustomSmartPointer {
 }
 
 fn main() {
+    using_the_drop_trait();
+}
+
+fn using_the_drop_trait() {
     let _c = CustomSmartPointer {
         data: String::from("my stuff"),
     };
