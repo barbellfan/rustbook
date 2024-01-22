@@ -10,6 +10,7 @@ impl Drop for CustomSmartPointer {
 
 fn main() {
     using_the_drop_trait();
+    dropping_a_val_early();
 }
 
 fn using_the_drop_trait() {
@@ -22,4 +23,15 @@ fn using_the_drop_trait() {
     };
 
     println!("CustomSmartPointers created.");
+}
+
+fn dropping_a_val_early() {
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
+    };
+
+    println!("CustomSmartPointer created.");
+    //c.drop(); // can't call this directly
+    drop(c);
+    println!("CustomSmartPointer dropped before the end of main.")
 }
