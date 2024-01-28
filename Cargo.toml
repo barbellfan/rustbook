@@ -64,9 +64,10 @@ members = [
     "ch15/ch15_2_deref_trait",
     "ch15/ch15_3_drop_trait",
     "ch15/ch15_4_ref_count",
-    "ch15/ch15_5_ref_cell"
+    "ch15/ch15_5_ref_cell",
+    "ch15/ch15_5a_ref_cell"
 ]
 default-members = [
-    "ch15/ch15_5_ref_cell"
+    "ch15/ch15_5a_ref_cell"
 ]
 resolver = "2"
