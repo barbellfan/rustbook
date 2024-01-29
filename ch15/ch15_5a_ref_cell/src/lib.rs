@@ -55,6 +55,16 @@ mod tests {
     impl Messenger for MockMessenger {
         fn send(&self, message: &str) {
             self.sent_messages.borrow_mut().push(String::from(message));
+
+            /* example of trying to use two mutable borrows at once.
+            this panics at runtime with: already borrowed: BorrowMutError
+
+            let mut one_borrow = self.sent_messages.borrow_mut();
+            let mut two_borrow = self.sent_messages.borrow_mut();
+
+            one_borrow.push(String::from(message));
+            two_borrow.push(String::from(message));
+            */
         }
     }
 
