@@ -10,6 +10,10 @@ struct Node {
 }
 
 fn main() {
+    add_ref_from_child_to_parent();
+}
+
+fn add_ref_from_child_to_parent() {
     let leaf = Rc::new(Node {
         value: 3,
         parent: RefCell::new(Weak::new()),
