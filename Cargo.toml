@@ -68,9 +68,10 @@ members = [
     "ch15/ch15_5a_ref_cell",
     "ch15/ch15_5b_ref_cell",
     "ch15/ch15_6_ref_cycle",
-    "ch15/ch15_6a_prev_ref_cycle"
+    "ch15/ch15_6a_prev_ref_cycle",
+    "ch16/ch16_1_spawn_thread"
 ]
 default-members = [
-    "ch15/ch15_6a_prev_ref_cycle"
+    "ch16/ch16_1_spawn_thread"
 ]
 resolver = "2"
