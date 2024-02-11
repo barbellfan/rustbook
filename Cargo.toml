@@ -75,9 +75,10 @@ members = [
     "ch16/ch16_2a_mult_vals",
     "ch16/ch16_3_mutex",
     "ch16/ch16_3a_share_mutex",
-    "ch17/ch17_1_avg_coll"
+    "ch17/ch17_1_avg_coll",
+    "ch17/ch17_2_trait_obj"
 ]
 default-members = [
-    "ch17/ch17_1_avg_coll"
+    "ch17/ch17_2_trait_obj"
 ]
 resolver = "2"
