@@ -1,7 +1,6 @@
 pub trait Draw {
     fn draw(&self);
 }
-
 pub struct Button {
     pub width: u32,
     pub height: u32,
@@ -11,6 +10,10 @@ pub struct Button {
 impl Draw for Button {
     fn draw(&self) {
         // code to actually draw the button.
+        println!("calling draw() for button: width {} height {} label {}",
+            self.width,
+            self.height,
+            self.label);
     }
 }
 
