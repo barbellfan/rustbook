@@ -73,9 +73,10 @@ members = [
     "ch16/ch16_1a_move_closures",
     "ch16/ch16_2_messages",
     "ch16/ch16_2a_mult_vals",
-    "ch16/ch16_3_mutex"
+    "ch16/ch16_3_mutex",
+    "ch16/ch16_3a_share_mutex"
 ]
 default-members = [
-    "ch16/ch16_3_mutex"
+    "ch16/ch16_3a_share_mutex"
 ]
 resolver = "2"
