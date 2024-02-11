@@ -28,13 +28,3 @@ impl Screen {
         }
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn to_test() {
-        assert_eq!(4, 4);
-    }
-}
