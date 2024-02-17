@@ -1,5 +1,5 @@
 mod gui;
-use gui::{Button, Draw, Screen};
+//use gui::{Button, Draw, Screen};
 
 struct SelectBox {
     width: u32,
@@ -7,7 +7,7 @@ struct SelectBox {
     options: Vec<String>,
 }
 
-impl Draw for SelectBox {
+impl gui::Draw for SelectBox {
     fn draw(&self) {
         // code to actually draw a select box
         println!("calling draw() for SelectBox: width {} height {} options {}",
@@ -18,7 +18,7 @@ impl Draw for SelectBox {
 }
 
 fn main() {
-    let screen = Screen {
+    let screen = gui::Screen {
         components: vec![
             Box::new(SelectBox {
                 width: 75,
@@ -29,7 +29,7 @@ fn main() {
                     String::from("No"),
                 ],
             }),
-            Box::new(Button {
+            Box::new(gui::Button {
                 width: 50,
                 height: 10,
                 label: String::from("OK"),
