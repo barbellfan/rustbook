@@ -78,9 +78,10 @@ members = [
     "ch17/ch17_1_avg_coll",
     "ch17/ch17_2_trait_obj",
     "ch17/ch17_3_state_pattern",
-    "ch18/ch18_1a_if_let_expr"
+    "ch18/ch18_1a_if_let_expr",
+    "ch18/ch18_1b_while_let"
 ]
 default-members = [
-    "ch18/ch18_1a_if_let_expr"
+    "ch18/ch18_1b_while_let"
 ]
 resolver = "2"
