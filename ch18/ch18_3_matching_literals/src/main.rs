@@ -3,6 +3,7 @@ fn main() {
     matching_named_variables();
     multiple_patterns();
     matching_ranges();
+    destructuring_struct();
 }
 
 fn matching_literals() {
@@ -54,4 +55,24 @@ fn matching_ranges() {
         'k'..='z' => println!("late ASCII letter"),
         _ => println!("something else")
     }
+}
+
+struct Point {
+    x: i32,
+    y: i32,
+}
+fn destructuring_struct() {
+    let p = Point { x: 0, y: 7 };
+
+    // usual way
+    let Point { x: a, y: b } = p;
+    assert_eq!(0, a);
+    assert_eq!(7, b);
+
+    // rust shortcut
+    let p = Point { x: 0, y: 7 };
+
+    let Point { x, y } = p;
+    assert_eq!(0, x);
+    assert_eq!(7, y);
 }
