@@ -2,6 +2,7 @@ fn main() {
     matching_literals();
     matching_named_variables();
     multiple_patterns();
+    matching_ranges();
 }
 
 fn matching_literals() {
@@ -35,5 +36,22 @@ fn multiple_patterns() {
         1 | 2 => println!("one or two"),
         3 => println!("three"),
         _ => println!("anything"),
+    }
+}
+
+fn matching_ranges() {
+    let x = 5;
+
+    match x {
+        1..=5 => println!("one through five"),
+        _ => println!("something else"),
+    }
+
+    let x = 'c';
+
+    match x {
+        'a'..='j' => println!("early ASCII letter"),
+        'k'..='z' => println!("late ASCII letter"),
+        _ => println!("something else")
     }
 }
