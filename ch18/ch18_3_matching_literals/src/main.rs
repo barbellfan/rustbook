@@ -3,7 +3,8 @@ fn main() {
     matching_named_variables();
     multiple_patterns();
     matching_ranges();
-    destructuring_struct();
+    destructuring_struct_1();
+    destructuring_struct_2();
 }
 
 fn matching_literals() {
@@ -61,7 +62,8 @@ struct Point {
     x: i32,
     y: i32,
 }
-fn destructuring_struct() {
+
+fn destructuring_struct_1() {
     let p = Point { x: 0, y: 7 };
 
     // usual way
@@ -75,4 +77,16 @@ fn destructuring_struct() {
     let Point { x, y } = p;
     assert_eq!(0, x);
     assert_eq!(7, y);
+}
+
+fn destructuring_struct_2() {
+    let p = Point { x: 0, y: 7 };
+
+    match p {
+        Point { x, y: 0 } => println!("On the x axis at {x}"),
+        Point { x: 0, y } => println!("On the y axis at {y}"),
+        Point { x, y } => {
+            println!("On neither axis: ({x}, {y})");
+        }
+    }
 }
