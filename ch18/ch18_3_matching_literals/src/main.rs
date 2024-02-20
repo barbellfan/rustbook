@@ -1,8 +1,8 @@
 fn main() {
-    matching_lilterals();
+    matching_literals();
 }
 
-fn matching_lilterals() {
+fn matching_literals() {
     let x = 1;
 
     match x {
