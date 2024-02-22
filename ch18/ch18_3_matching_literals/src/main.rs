@@ -1,5 +1,3 @@
-use std::os::unix::raw::gid_t;
-
 fn main() {
     matching_literals();
     matching_named_variables();
@@ -103,10 +101,22 @@ enum Message {
 
 fn destructuring_enums() {
     let msg = Message::ChangeColor(0, 160, 255);
+    match_em(msg);
 
+    let msg = Message::Quit;
+    match_em(msg);
+
+    let msg = Message::Move { x: 10, y: 20 };
+    match_em(msg);
+
+    let msg = Message::Write(String::from("A message"));
+    match_em(msg);
+}
+
+fn match_em(msg: Message) {
     match msg {
         Message::Quit => {
-            println!("The Quit variante has no data to destructure.");
+            println!("The Quit variant has no data to destructure.");
         }
         Message::Move { x, y } => {
             println!("Move in the x direction {x} and in the y direction {y}");
