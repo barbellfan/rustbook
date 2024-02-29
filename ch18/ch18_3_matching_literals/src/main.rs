@@ -7,6 +7,7 @@ fn main() {
     destructuring_struct_2();
     destructuring_enums();
     nested();
+    destructuring_struts_and_tuples();
 }
 
 fn matching_literals() {
@@ -149,4 +150,10 @@ fn nested() {
         _ => (),
     }
 
+}
+
+fn destructuring_struts_and_tuples() {
+    let ((feet, inches), Point{ x, y }) = ((3, 10), Point { x: 3, y: -10});
+
+    println!("feet: {feet} inches: {inches} x: {x} y: {y}");
 }
