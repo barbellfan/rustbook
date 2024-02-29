@@ -8,6 +8,7 @@ fn main() {
     destructuring_enums();
     nested();
     destructuring_struts_and_tuples();
+    ignoring_an_entire_value();
 }
 
 fn matching_literals() {
@@ -156,4 +157,11 @@ fn destructuring_struts_and_tuples() {
     let ((feet, inches), Point{ x, y }) = ((3, 10), Point { x: 3, y: -10});
 
     println!("feet: {feet} inches: {inches} x: {x} y: {y}");
+}
+
+fn foo(_: i32, y: i32) {
+    println!("This code only uses the y parameter: {}", y);
+}
+fn ignoring_an_entire_value() {
+    foo(3, 4);
 }
