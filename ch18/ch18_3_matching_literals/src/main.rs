@@ -9,6 +9,7 @@ fn main() {
     nested();
     destructuring_struts_and_tuples();
     ignoring_an_entire_value();
+    ignoring_parts_of_a_value();
 }
 
 fn matching_literals() {
@@ -164,4 +165,28 @@ fn foo(_: i32, y: i32) {
 }
 fn ignoring_an_entire_value() {
     foo(3, 4);
+}
+
+fn ignoring_parts_of_a_value() {
+    let mut setting_value = Some(5);
+    let new_setting_value = Some(10);
+
+    match  (setting_value, new_setting_value) {
+        (Some(_), Some(_)) => {
+            println!("Can't overwrite an existing customized value");
+        }
+        _ => {
+            setting_value = new_setting_value;
+        }
+    }
+
+    println!("Setting is {:?}", setting_value);
+
+    let numbers = (2, 4, 8, 16, 32);
+
+    match numbers {
+        (first, _, third, _, fifth) => {
+            println!("Some numbers: {first}, {third}, {fifth}");
+        }
+    }
 }
