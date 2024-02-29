@@ -10,6 +10,7 @@ fn main() {
     destructuring_struts_and_tuples();
     ignoring_an_entire_value();
     ignoring_parts_of_a_value();
+    ignoring_unused_vars();
 }
 
 fn matching_literals() {
@@ -189,4 +190,9 @@ fn ignoring_parts_of_a_value() {
             println!("Some numbers: {first}, {third}, {fifth}");
         }
     }
+}
+
+fn ignoring_unused_vars() {
+    let _x = 5; // no compiler warning.
+    //let y = 10; // compiler warning because it is unused.
 }
