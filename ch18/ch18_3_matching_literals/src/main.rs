@@ -195,4 +195,12 @@ fn ignoring_parts_of_a_value() {
 fn ignoring_unused_vars() {
     let _x = 5; // no compiler warning.
     //let y = 10; // compiler warning because it is unused.
+
+    let s = Some(String::from("Hello!"));
+
+    if let Some(_s) = s {
+        println!("found a string");
+    }
+
+    println!("{:?}", s);
 }
