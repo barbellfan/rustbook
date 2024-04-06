@@ -11,7 +11,8 @@ fn main() {
     ignoring_an_entire_value();
     ignoring_parts_of_a_value();
     ignoring_unused_vars();
-    ignoring_remaining_parts_of_a_val_with_2_dots()
+    ignoring_remaining_parts_of_a_val_with_2_dots();
+    extra_conditionals_with_match_guards();
 }
 
 fn matching_literals() {
@@ -241,4 +242,15 @@ fn ignoring_remaining_parts_of_a_val_with_2_dots()
         }
     }
     */
+}
+
+fn extra_conditionals_with_match_guards()
+{
+    let num = Some(4);
+
+    match num {
+        Some(x) if x % 2 == 0 => println!("The number {} is even", x),
+        Some(x) => println!("The number {} is odd", x),
+        None => (),
+    }
 }
