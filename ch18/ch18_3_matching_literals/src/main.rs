@@ -1,3 +1,5 @@
+use std::process::id;
+
 fn main() {
     matching_literals();
     matching_named_variables();
@@ -15,6 +17,7 @@ fn main() {
     extra_conditionals_with_match_guards();
     match_guard_2();
     match_guard_3();
+    at_bindings_in_match();
 }
 
 fn matching_literals() {
@@ -279,5 +282,24 @@ fn match_guard_3()
     match x {
         4 | 5 | 6 if y => println!("yes"),
         _ => println!("no"),
+    }
+}
+
+fn at_bindings_in_match()
+{
+    enum Message {
+        Hello { id: i32 },
+    }
+
+    let msg = Message::Hello { id: 5 };
+
+    match msg {
+        Message::Hello {
+            id: id_variable @ 3..=7,
+        } => println!("Found an id in range: {}", id_variable),
+        Message::Hello { id: 10..=12 } => {
+            println!("Found an id in another range")
+        }
+        Message::Hello { id } => println!("Found some other id: {}", id)
     }
 }
