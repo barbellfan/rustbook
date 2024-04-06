@@ -198,6 +198,7 @@ fn ignoring_unused_vars() {
 
     let s = Some(String::from("Hello!"));
 
+    //if let Some(_s) = s { // compiler warning because s is moved into _s even tho _s is 'ignored'
     if let Some(_) = s {
         println!("found a string");
     }
