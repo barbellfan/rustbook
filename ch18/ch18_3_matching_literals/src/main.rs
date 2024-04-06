@@ -11,6 +11,7 @@ fn main() {
     ignoring_an_entire_value();
     ignoring_parts_of_a_value();
     ignoring_unused_vars();
+    ignoring_remaining_parts_of_a_val_with_2_dots()
 }
 
 fn matching_literals() {
@@ -204,4 +205,40 @@ fn ignoring_unused_vars() {
     }
 
     println!("{:?}", s);
+}
+
+fn ignoring_remaining_parts_of_a_val_with_2_dots()
+{
+    struct Point {
+        x: i32,
+        y: i32,
+        z: i32,
+    }
+
+    let origin = Point { x: 0, y: 1, z: 2 };
+
+    match origin {
+        Point { x, .. } => println!("x is {}", x),
+    }
+    match origin {
+        Point { y, .. } => println!("y is {}", y),
+    }
+    match origin {
+        Point { z, .. } => println!("z is {}", z),
+    }
+
+    let numbers = (2,4,8,16,32);
+
+    match numbers {
+        (first, .., last) => {
+            println!("Some numbers: {first}, {last}");
+        }
+    }
+    /* this won't work, tho. 'second' is ambiguous
+    match numbers {
+        (.., second, ..) => {
+            println!("Some numbers: {second}");
+        }
+    }
+    */
 }
