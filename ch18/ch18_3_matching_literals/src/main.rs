@@ -14,6 +14,7 @@ fn main() {
     ignoring_remaining_parts_of_a_val_with_2_dots();
     extra_conditionals_with_match_guards();
     match_guard_2();
+    match_guard_3();
 }
 
 fn matching_literals() {
@@ -268,4 +269,15 @@ fn match_guard_2()
     }
 
     println!("at the end: x = {:?}, y = {y}", x);
+}
+
+fn match_guard_3()
+{
+    let x = 4;
+    let y = false;
+
+    match x {
+        4 | 5 | 6 if y => println!("yes"),
+        _ => println!("no"),
+    }
 }
