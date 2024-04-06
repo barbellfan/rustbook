@@ -13,6 +13,7 @@ fn main() {
     ignoring_unused_vars();
     ignoring_remaining_parts_of_a_val_with_2_dots();
     extra_conditionals_with_match_guards();
+    match_guard_2();
 }
 
 fn matching_literals() {
@@ -253,4 +254,18 @@ fn extra_conditionals_with_match_guards()
         Some(x) => println!("The number {} is odd", x),
         None => (),
     }
+}
+
+fn match_guard_2()
+{
+    let x = Some(5);
+    let y = 10;
+
+    match x {
+        Some(50) => println!("Got 50"),
+        Some(n) if n == y => println!("Matched, n = {n}"),
+        _ => println!("Default case, x = {:?}", x),
+    }
+
+    println!("at the end: x = {:?}, y = {y}", x);
 }
