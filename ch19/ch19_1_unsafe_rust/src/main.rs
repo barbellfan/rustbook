@@ -5,6 +5,7 @@ fn main() {
     raw_pointer_from_thin_air();
     dereferencing_raw_pointers_in_unsafe_block();
     calling_unsafe_code();
+    probably_will_crash();
 }
 
 fn raw_pointers_from_references()
@@ -89,4 +90,20 @@ fn split_at_mut(values: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
             slice::from_raw_parts_mut(ptr.add(mid), len - mid),
         )
     }
+}
+
+fn probably_will_crash() {
+    let address = 0x01234usize;
+    let r = address as *mut i32;
+
+    println!("getting values unsafely");
+    let _values: &[i32] = unsafe {
+        slice::from_raw_parts_mut(r, 10000)
+    };
+    println!("done getting values unsafely");
+
+    // this doesn't print anything, and neither does the next line.
+    // causes a crash.
+    //println!("an unsafe value: {:?}", values[0]);
+    //println!("done printing unsafe value");
 }
