@@ -6,6 +6,7 @@ fn main() {
     dereferencing_raw_pointers_in_unsafe_block();
     calling_unsafe_code();
     probably_will_crash();
+    calling_c();
 }
 
 fn raw_pointers_from_references()
@@ -106,4 +107,14 @@ fn probably_will_crash() {
     // causes a crash.
     //println!("an unsafe value: {:?}", values[0]);
     //println!("done printing unsafe value");
+}
+
+extern "C" {
+    fn abs(input: i32) -> i32;
+}
+
+fn calling_c() {
+    unsafe {
+        println!("The absolute value of -3 according to C: {}", abs(-3));
+    }
 }
