@@ -7,6 +7,7 @@ fn main() {
     calling_unsafe_code();
     probably_will_crash();
     calling_c();
+    static_vars();
 }
 
 fn raw_pointers_from_references()
@@ -122,4 +123,19 @@ fn calling_c() {
 #[no_mangle]
 pub extern "C" fn call_from_c() {
     println!("Just called a Rust function from C!");
+}
+
+static mut COUNTER: u32 = 0;
+
+fn add_to_count(inc: u32) {
+    unsafe {
+        COUNTER += inc;
+    }
+}
+fn static_vars() {
+    add_to_count(3);
+
+    unsafe {
+        println!("COUNTER: {}", COUNTER);
+    }
 }
