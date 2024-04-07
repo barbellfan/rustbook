@@ -118,3 +118,8 @@ fn calling_c() {
         println!("The absolute value of -3 according to C: {}", abs(-3));
     }
 }
+
+#[no_mangle]
+pub extern "C" fn call_from_c() {
+    println!("Just called a Rust function from C!");
+}
