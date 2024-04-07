@@ -4,6 +4,7 @@ fn main() {
     raw_pointers_from_references();
     raw_pointer_from_thin_air();
     dereferencing_raw_pointers_in_unsafe_block();
+    calling_unsafe_code();
 }
 
 fn raw_pointers_from_references()
@@ -64,5 +65,28 @@ fn dereferencing_raw_pointers_in_unsafe_block() {
     unsafe {
         println!("r1 is {}", *r1);
         println!("r2 is {}", *r2);
+    }
+}
+
+use std::slice;
+
+fn calling_unsafe_code() {
+    let mut vals: [i32; 7] = [1, 2, 3, 4, 5, 6, 7];
+    let middle = 4;
+
+    println!("{:?}", split_at_mut(&mut vals, middle));
+}
+
+fn split_at_mut(values: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
+    let len = values.len();
+    let ptr = values.as_mut_ptr();
+
+    assert!(mid <= len);
+
+    unsafe {
+        (
+            slice::from_raw_parts_mut(ptr, mid),
+            slice::from_raw_parts_mut(ptr.add(mid), len - mid),
+        )
     }
 }
