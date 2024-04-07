@@ -3,6 +3,7 @@ use std::any::type_name;
 fn main() {
     raw_pointers_from_references();
     raw_pointer_from_thin_air();
+    dereferencing_raw_pointers_in_unsafe_block();
 }
 
 fn raw_pointers_from_references()
@@ -52,4 +53,16 @@ fn raw_pointer_from_thin_air()
     // this line never gets reached. the unsafe line must crash or something.
     println!("done with raw_pointer_from_thin_air()");
     */
+}
+
+fn dereferencing_raw_pointers_in_unsafe_block() {
+    let mut num = 5;
+
+    let r1 = &num as *const i32;
+    let r2 = &mut num as *mut i32;
+
+    unsafe {
+        println!("r1 is {}", *r1);
+        println!("r2 is {}", *r2);
+    }
 }
