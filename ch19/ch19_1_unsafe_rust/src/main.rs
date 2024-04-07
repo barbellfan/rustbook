@@ -2,6 +2,7 @@ use std::any::type_name;
 
 fn main() {
     raw_pointers_from_references();
+    raw_pointer_from_thin_air();
 }
 
 fn raw_pointers_from_references()
@@ -20,4 +21,35 @@ fn raw_pointers_from_references()
 
 fn print_type_of<T>(_: &T) {
     println!("{}", type_name::<T>())
+}
+
+fn raw_pointer_from_thin_air()
+{
+    let address = 0x012345usize;
+    let r = address as *const i32;
+
+    // you can print the type
+    print_type_of(&r);
+    // you can print the address
+    println!("r: {:?}", r);
+    /*
+    unsafe {
+        // you can't print the value tho. panic:
+        // misaligned pointer dereference: address must be a multiple of 0x4 but is 0x12345
+        println!("&r: {:?}", *r);
+    }
+    */
+
+    /*
+    // OK, pick an address that's a multiple of 4
+    let address2 = 0x012340usize;
+    let r2 = address2 as *const i32;
+
+    unsafe {
+        // this doesn't print anything.
+        println!("&r2: {:?}", *r2);
+    }
+    // this line never gets reached. the unsafe line must crash or something.
+    println!("done with raw_pointer_from_thin_air()");
+    */
 }
