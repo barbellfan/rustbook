@@ -1,5 +1,3 @@
-use std::process::id;
-
 fn main() {
     matching_literals();
     matching_named_variables();
