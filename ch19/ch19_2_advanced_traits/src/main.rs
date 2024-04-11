@@ -3,6 +3,7 @@ fn main() {
     default_generic_type_params_and_op_overload_2();
     disambiguation();
     disambiguation_2();
+    supertraits();
 }
 
 use std::ops::Add;
@@ -108,4 +109,32 @@ fn disambiguation_2() {
 
     println!("A baby dog is called a {}", Dog::baby_name()); // returns 'Spot'
     println!("A baby dog is called a {}", <Dog as Animal>::baby_name()); // returns 'puppy'
+}
+
+fn supertraits() {
+    use std::fmt;
+
+    trait OutlinePrint: fmt::Display {
+        fn outline_print(&self) {
+            let output = self.to_string();
+            let len = output.len();
+            println!("{}", "*".repeat(len + 4));
+            println!("*{}*", " ".repeat(len + 2));
+            println!("* {} *", output);
+            println!("*{}*", " ".repeat(len + 2));
+            println!("{}", "*".repeat(len + 4));
+        }
+    }
+
+    impl fmt::Display for Point {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "({}, {})", self.x, self.y)
+        }
+    }
+
+    impl OutlinePrint for Point {}
+
+    let p = Point{ x: 5, y: 8 };
+    println!("Point:");
+    p.outline_print();
 }
