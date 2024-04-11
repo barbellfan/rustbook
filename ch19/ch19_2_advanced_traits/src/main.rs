@@ -4,6 +4,7 @@ fn main() {
     disambiguation();
     disambiguation_2();
     supertraits();
+    newtype_pattern();
 }
 
 use std::ops::Add;
@@ -137,4 +138,19 @@ fn supertraits() {
     let p = Point{ x: 5, y: 8 };
     println!("Point:");
     p.outline_print();
+}
+
+fn newtype_pattern() {
+    use std::fmt;
+
+    struct Wrapper(Vec<String>);
+
+    impl fmt::Display for Wrapper {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "[{}]", self.0.join(", "))
+        }
+    }
+
+    let w = Wrapper(vec![String::from("hello"), String::from("world")]);
+    println!("w = {}", w);
 }
