@@ -1,6 +1,7 @@
 fn main() {
     default_generic_type_params_and_op_overload();
     default_generic_type_params_and_op_overload_2();
+    disambiguation();
 }
 
 use std::ops::Add;
@@ -46,4 +47,41 @@ fn default_generic_type_params_and_op_overload_2() {
 
     let added = mi.add(me);
     println!("meters + millimeters: {}", added.0);
+}
+
+fn disambiguation() {
+    trait Pilot {
+        fn fly(&self);
+    }
+
+    trait Wizard {
+        fn fly(&self);
+    }
+
+    struct Human;
+
+    impl Pilot for Human {
+        fn fly(&self) {
+            println!("This is your captain speaking.");
+        }
+    }
+    impl Wizard for Human {
+        fn fly(&self) {
+            println!("Up!");
+        }
+    }
+
+    impl Human {
+        fn fly(&self) {
+            println!("Waving arms furiously");
+        }
+    }
+
+    let person = Human;
+    Pilot::fly(&person);
+    Wizard::fly(&person);
+
+    // these two lines do the same thing.
+    person.fly();
+    Human::fly(&person);
 }
