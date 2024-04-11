@@ -2,6 +2,7 @@ fn main() {
     default_generic_type_params_and_op_overload();
     default_generic_type_params_and_op_overload_2();
     disambiguation();
+    disambiguation_2();
 }
 
 use std::ops::Add;
@@ -84,4 +85,27 @@ fn disambiguation() {
     // these two lines do the same thing.
     person.fly();
     Human::fly(&person);
+}
+
+fn disambiguation_2() {
+    trait  Animal {
+        fn baby_name() -> String;
+    }
+
+    struct Dog;
+
+    impl Dog {
+        fn baby_name() -> String {
+            String::from("Spot")
+        }
+    }
+
+    impl Animal for Dog {
+        fn baby_name() -> String {
+            String::from("puppy")
+        }
+    }
+
+    println!("A baby dog is called a {}", Dog::baby_name()); // returns 'Spot'
+    println!("A baby dog is called a {}", <Dog as Animal>::baby_name()); // returns 'puppy'
 }
