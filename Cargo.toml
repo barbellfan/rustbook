@@ -83,9 +83,10 @@ members = [
     "ch18/ch18_1c_for_loop_pattern",
     "ch18/ch18_3_matching_literals",
     "ch19/ch19_1_unsafe_rust",
-    "ch19/ch19_2_advanced_traits"
+    "ch19/ch19_2_advanced_traits",
+    "ch19/ch19_3_advanced_types"
 ]
 default-members = [
-    "ch19/ch19_2_advanced_traits"
+    "ch19/ch19_3_advanced_types"
 ]
 resolver = "2"
