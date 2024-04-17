@@ -84,9 +84,10 @@ members = [
     "ch18/ch18_3_matching_literals",
     "ch19/ch19_1_unsafe_rust",
     "ch19/ch19_2_advanced_traits",
-    "ch19/ch19_3_advanced_types"
+    "ch19/ch19_3_advanced_types",
+    "ch19/ch19_4_adv_funcs_closures"
 ]
 default-members = [
-    "ch19/ch19_3_advanced_types"
+    "ch19/ch19_4_adv_funcs_closures"
 ]
 resolver = "2"
