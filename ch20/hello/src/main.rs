@@ -20,7 +20,7 @@ fn handle_connection(mut stream: TcpStream) {
     let request_line = buf_reader.lines().next().unwrap().unwrap();
 
     if request_line == "GET / HTTP/1.1" {
-        let status_line = "HTTP/1.1 200 OK\r\n\r\n";
+        let status_line = "HTTP/1.1 200 OK";
         let contents = fs::read_to_string("ch20/hello/hello.html").unwrap();
         let length = contents.len();
 
