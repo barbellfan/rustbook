@@ -1,4 +1,5 @@
 use std::{
+    fs,
     io::{prelude::*, BufReader},
     net::{TcpListener, TcpStream}
 };
@@ -21,8 +22,17 @@ fn handle_connection(mut stream: TcpStream) {
         .map(|result| result.unwrap())
         .take_while(|line| !line.is_empty())
         .collect();
+    /*
+    let paths = fs::read_dir("./").unwrap();
+    for path in paths {
+        println!("Name: {}", path.unwrap().path().display());
+    }
+    */
+    let status_line = "HTTP/1.1 200 OK\r\n\r\n";
+    let contents = fs::read_to_string("ch20/hello/hello.html").unwrap();
+    let length = contents.len();
 
-    let response = "HTTP/1.1 200 OK\r\n\r\n";
+    let response = format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}");
 
     stream.write_all(response.as_bytes()).unwrap();
 }
